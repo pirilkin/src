@@ -1,0 +1,8 @@
+@import "./mixins/breakpoint";
+@import "./mixins/burger";
+@import "./mixins/font-face";
+
+@mixin bg($url: '', $repeat: no-repeat, $size: cover, $x: center, $y:center){
+    background: url($url) $repeat $x $y / $size;
+  }
+  // @include bg('../img/header_01.jpg');

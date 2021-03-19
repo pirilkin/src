@@ -1,0 +1,289 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  // margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  // font-family: "Poppins";
+  background: $light-pink;
+}
+
+img {
+  max-width: 100%;
+}
+
+.container {
+  max-width: 1650px;
+
+  &-fluid {
+    max-width: 100%;
+  }
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.is-outer {
+  position: relative !important; // stylelint-disable-line declaration-no-important
+  left: -9999px !important; // stylelint-disable-line declaration-no-important
+}
+
+.site-container {
+  // overflow: hidden;
+}
+
+.is-hidden {
+  // display: none !important; // stylelint-disable-line declaration-no-important
+  transform: translateX(0px) !important;
+}
+.is-rotated{
+  transform: rotate(-90deg);
+  margin-right: 30px;
+}
+
+.for-mobile {
+  display: none;
+
+  @include media (mobile) {
+    display: block;
+  }
+}
+
+.error {
+  border: 2px #ff4019 solid !important; // stylelint-disable-line declaration-no-important
+}
+
+.btn-reset {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+// .container {
+//   margin: 0 auto;
+//   padding: 0 15px;
+//   max-width: 1200px;
+// }
+
+.js-focus-visible :focus:not(.focus-visible) {
+  outline: none;
+}
+
+.title {
+  color: $blue-color;
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 48px;
+
+  @include media(full) {
+    font-size: 36px;
+  }
+}
+
+.subtitle {
+  font-size: 14px;
+  color: #707070;
+  margin: 0;
+  font-weight: 400;
+}
+
+#main-title {
+  font-size: 200px;
+  line-height: 0.8;
+  color: $blue-color;
+  font-weight: 900;
+  opacity: 0.05;
+  letter-spacing: -5px;
+  margin: 0;
+  height: 150px;
+
+  @include media(full) {
+    font-size: 150px;
+    height: 160px;
+  }
+
+  @include media(tablet) {
+    font-size: 120px;
+  }
+
+  @include media(minimal) {
+    font-size: 100px;
+    letter-spacing: 0px;
+
+  }
+
+  @include media(s9) {
+    font-size: 80px;
+    height: 85px;
+    line-height: 50px;
+  }
+}
+
+h2,
+h5 {
+  margin: 0;
+}
+
+input:focus,
+input:active {
+  outline: none;
+  border: none;
+}
+
+input[type=submit] {
+  background: none;
+  border: none;
+  font-size: 30px;
+  color: $white-color;
+  text-transform: uppercase;
+
+  @include media(tablet) {
+    font-size: 24px;
+  }
+
+  @include media(s9) {
+    font-size: 20px;
+  }
+}
+
+.icon-download-appledownload-google,
+.icon-download-appleapple {
+  color: $white-color;
+  margin-right: 13px;
+}
+.green-bg {
+  background: var(--main-color);
+}
+.red-bg {
+  background: var(--main-color);
+}
+.green-bg-opacity {
+  @include media(full) {
+    background: rgba($light-green, 0.7);
+  }
+}
+.red-bg-opacity {
+  @include media(full) {
+    background: rgba($orange-color, 0.7);
+  }
+}
+.green-bg-opacity,
+.red-bg-opacity {
+  transition: 0.3s;
+
+  @include media(full) {
+    // background: rgba(var(--main-color), 0.7);
+  }
+}
+
+.food-block-content:hover .green-bg-opacity {
+  background: rgba($light-green, 0.7);
+}
+
+.food-block-content:hover .red-bg-opacity {
+  background: rgba($orange-color, 0.7);
+}
+
+.green-color {
+  color: var(--main-color);
+}
+
+// .red-color {
+//   color: $orange-color;
+// }
+
+//переключалка цветов
+.switch-btn {
+  display: inline-block;
+  width: 75px; /* ширина */
+  height: 38px; /* высота */
+  border-radius: 19px; /* радиус скругления */
+  background: $orange-color; /* цвет фона */
+  z-index: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+  transition-duration: 200ms; /* анимация */
+  border: 2px solid $white-color;
+  &:hover{
+    box-shadow: 1px 1px 11px 4px #D7D7D7;
+  }
+}
+.switch-btn::after {
+  content: "";
+  height: 32px; /* высота кнопки */
+  width: 32px; /* ширина кнопки */
+  border-radius: 17px;
+  background: #fff; /* цвет кнопки */
+  top: 50%; /* положение кнопки по вертикали относительно основы */
+  left: 2px; /* положение кнопки по горизонтали относительно основы */
+  transition-duration: 200ms; /* анимация */
+  position: absolute;
+  z-index: 1;
+  transform: translateY(-50%);
+}
+.switch-on {
+  background: $light-green;
+}
+.switch-on::after {
+  left: 37px;
+}
+.switch-off{
+}
+#people{
+  width: 25px;
+  font-weight: normal;
+  font-size: 18px;
+  &::placeholder{
+    font-size: 18px;
+    font-weight: bold;
+  }
+}
+#tel{
+  &::placeholder{
+    
+  }
+}
+input::placeholder{
+  font-size: 16px;
+  font-family: "Poppins";
+}
+.fa{
+  transition: 0.5;
+  &:hover{
+    scale: 1.2;
+    
+  }
+}
+.hidden-slider{
+  display: none !important;
+}
+.show-slider{
+  display: none !important;
+}
+.z-index{
+  scale: 1 !important;
+  z-index: 2;
+}
+.display-none{
+  scale: 0.5;
+  opacity: 0 !important;
+}
+
+

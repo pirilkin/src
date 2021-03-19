@@ -1,0 +1,96 @@
+.download {
+    background: $pink-color;
+    &-title{
+        display: flex;
+        align-items: center;
+        @include media(notebook) {
+            max-width: 50%;
+            font-size: 24px;
+        }
+        @include media(minimal) {
+            max-width: 100%;
+          
+        }
+        
+    }
+    &-content{
+        margin-left: 65px;
+        margin-bottom: 31px;
+        @include media(notebook) {
+            margin-left: 25px;
+        }
+    }
+    &-block {
+        margin-top: 29px;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        &-text {
+            display: flex;
+            margin-bottom: 21px;
+
+            &-line{
+                margin-right: 40px;
+            }
+        }
+
+        &-img {
+            &__item{
+                @include media(notebook) {
+                    transform: translateX(-15%);
+                }
+            }
+        }
+
+        &-subtitle {
+        }
+
+        &-link {
+            display: flex;
+            margin-left: 60px;
+            @include media(minimal) {
+              flex-direction: column;
+            }
+            &__item {
+                display: flex;
+                padding: 5px 15px 5px 20px;
+                border-radius: 10px;
+                background: #000;
+                align-items: center;
+                margin-right: 20px;
+                transition: 0.3s;
+                @include media(minimal) {
+                    margin-bottom: 10px;
+                  }
+                  &:hover{
+                      scale: 1.05;
+                  }
+                &-text {
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    color: $white-color;
+                    @include media(minimal) {
+                        margin: 0 auto;
+                      }
+                    &-get {
+                        font-size: 12px;
+                    }
+
+                    &-play {
+                        font-size: 14px;
+                        text-transform: capitalize;
+                        font-weight: 500;
+                    }
+                }
+            }
+        }
+    }
+    .icon-download-appledownload-google,
+    .icon-download-appleapple{
+        font-size: 36px;
+    }
+    
+}
+
+// 
